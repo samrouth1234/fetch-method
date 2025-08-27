@@ -90,4 +90,24 @@ const deletePost = async (id) => {
   }
 };
 
-export { fetchPosts, createPost, updatePost, deletePost };
+/**
+ * Fetches a single post by ID.
+ * @param {number} id - The ID of the post to fetch.
+ * @returns {Promise<object>} A promise that resolves to the fetched post.
+ */
+
+const fetchPostById = async (id) => {
+  try {
+    const response = await fetch(`${BASE_URL}/posts/${id}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching post by ID:", error);
+    throw error;
+  }
+};
+
+export { fetchPosts, createPost, updatePost, deletePost, fetchPostById };

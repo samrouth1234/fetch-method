@@ -1,6 +1,15 @@
 import { CiMenuKebab } from "react-icons/ci";
 
-const CardPost = ({ title, body, isDropdownOpen, toggleDropdown }) => {
+const CardPost = ({
+  title,
+  body,
+  isDropdownOpen,
+  toggleDropdown,
+  onDelete,
+  onEdit,
+  onViewDetails,
+  onViewQuickDetails,
+}) => {
   return (
     <div className="border p-4 rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 relative">
       <div className="flex justify-between items-center mb-4">
@@ -15,13 +24,30 @@ const CardPost = ({ title, body, isDropdownOpen, toggleDropdown }) => {
       {isDropdownOpen && (
         <div className="absolute right-4 w-48 bg-white border rounded shadow-lg z-10">
           <ul>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Edit</li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+            <button
+              onClick={onEdit}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-left"
+            >
+              Edit
+            </button>
+            <button
+              onClick={onDelete}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-left"
+            >
               Delete
-            </li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+            </button>
+            <button
+              onClick={onViewQuickDetails}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-left"
+            >
+              Quick View
+            </button>
+            <button
+              onClick={onViewDetails}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-left"
+            >
               View Details
-            </li>
+            </button>
           </ul>
         </div>
       )}

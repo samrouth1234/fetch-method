@@ -2,8 +2,7 @@ const Loading = () => {
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="text-center">
-        <img src="/loading.gif" size={50} />
-        {/* <p className="text-2xl">Loading ...</p> */}
+      <img src="/loading.gif" alt="Loading..." />
       </div>
     </div>
   );
