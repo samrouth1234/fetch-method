@@ -1,7 +1,9 @@
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { fetchPostById } from "../../../services/api";
-import Loading from "../../../components/loading";
+
+import { useParams } from "react-router-dom";
+
+import Loading from "../../../components/Loading";
+import { fetchPostById } from "../../../utils/api";
 
 const PostDetailsPage = () => {
   const { id } = useParams();
@@ -37,9 +39,9 @@ const PostDetailsPage = () => {
 
   return (
     <div className="container mx-auto p-5">
-      <div className="bg-white p-6 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-        <p className="text-gray-700 leading-relaxed text-justify">
+      <div className="rounded-lg bg-white p-6 shadow-lg">
+        <h1 className="mb-4 text-3xl font-bold">{post.title}</h1>
+        <p className="text-justify leading-relaxed text-gray-700">
           {post.body}
         </p>
       </div>

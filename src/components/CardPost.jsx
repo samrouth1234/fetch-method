@@ -11,47 +11,47 @@ const CardPost = ({
   onViewQuickDetails,
 }) => {
   return (
-    <div className="border p-4 rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 relative">
-      <div className="flex justify-between items-center mb-4">
-        <h3 className="text-xl uppercase font-bold text-pretty">{title}</h3>
+    <div className="relative rounded-lg border bg-white p-4 shadow-lg transition-shadow duration-300 hover:shadow-xl">
+      <div className="mb-4 flex items-center justify-between">
+        <h3 className="text-pretty text-xl font-bold uppercase">{title}</h3>
         <button
           onClick={toggleDropdown}
-          className="text-gray-500 hover:text-gray-800 cursor-pointer"
+          className="cursor-pointer text-gray-500 hover:text-gray-800"
         >
           <CiMenuKebab size={20} />
         </button>
       </div>
       {isDropdownOpen && (
-        <div className="absolute right-4 w-48 bg-white border rounded shadow-lg z-10">
+        <div className="absolute right-4 z-10 w-48 rounded border bg-white shadow-lg">
           <ul>
             <button
               onClick={onEdit}
-              className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-left"
+              className="w-full cursor-pointer px-4 py-2 text-left hover:bg-gray-100"
             >
               Edit
             </button>
             <button
               onClick={onDelete}
-              className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-left"
+              className="w-full cursor-pointer px-4 py-2 text-left hover:bg-gray-100"
             >
               Delete
             </button>
             <button
               onClick={onViewQuickDetails}
-              className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-left"
+              className="w-full cursor-pointer px-4 py-2 text-left hover:bg-gray-100"
             >
               Quick View
             </button>
             <button
               onClick={onViewDetails}
-              className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-left"
+              className="w-full cursor-pointer px-4 py-2 text-left hover:bg-gray-100"
             >
               View Details
             </button>
           </ul>
         </div>
       )}
-      <p className="text-gray-700 text-justify capitalize leading-relaxed">
+      <p className="text-justify capitalize leading-relaxed text-gray-700">
         {body}
       </p>
     </div>
